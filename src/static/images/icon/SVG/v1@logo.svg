@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 544.77">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #54bcce;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        fill: #0099a2;
+        font-family: TASAExplorer-Regular, 'TASA Explorer';
+        font-size: 499.79px;
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-3 {
+        fill: #1d4e4d;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_3" data-name="圖層 3">
+    <rect class="cls-3" x="0" y="17.51" width="512" height="512" rx="128" ry="128"/>
+  </g>
+  <g id="_圖層_2-2" data-name="圖層 2">
+    <rect class="cls-1" x="176.43" y="273.7" width="123.57" height="82.38"/>
+    <rect class="cls-1" x="176.43" y="191.32" width="123.57" height="82.38"/>
+    <rect class="cls-1" x="176.43" y="108.93" width="123.57" height="82.38"/>
+    <rect class="cls-1" x="300" y="273.7" width="123.57" height="82.38"/>
+    <rect class="cls-1" x="300" y="191.32" width="123.57" height="82.38"/>
+    <rect class="cls-1" x="300" y="108.93" width="123.57" height="82.38"/>
+  </g>
+  <g id="_圖層_1-2" data-name="圖層 1">
+    <text class="cls-2" transform="translate(86.14 419.82)"><tspan x="0" y="0">s</tspan></text>
+  </g>
+</svg>

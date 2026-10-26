@@ -1,0 +1,31 @@
+{
+  "name": "Schedify",
+  "runArgs": [
+    "--name",
+    "schedify-devcontainer"
+  ],
+  "image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
+  "onCreateCommand": "bash .devcontainer/install_uv.sh && bash .devcontainer/install_cloudflared.sh",
+  "postStartCommand": "bash .devcontainer/setup_cloudflare_tunnel.sh && bash .devcontainer/install_dev_tool.sh",
+  "forwardPorts": [
+    8000
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vsliveshare.vsliveshare",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "ms-python.vscode-python-envs",
+        "charliermarsh.ruff",
+        "ms-vscode.live-server",
+        "formulahendry.auto-complete-tag",
+        "thebarkman.vscode-djaneiro"
+        // "fourdigits.djlsp",
+        // "monosans.djlint",
+        // "batisteo.vscode-django",
+      ]
+    }
+  }
+}

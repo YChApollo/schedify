@@ -1,0 +1,29 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Schedify-課表通{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/footer.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+
+<body>
+    {% block navbar %}{% include 'components/navbar.html' %}{% endblock navbar %}
+    <main class="main-content">
+        {% block content %}{% endblock content %}
+    </main>
+    {% block footer %}{% include 'components/footer.html' with year=2026 %}{% endblock footer %}
+
+    {% block extra_js %}{% endblock extra_js %}
+</body>
+
+</html>

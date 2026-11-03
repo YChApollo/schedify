@@ -1,0 +1,6 @@
+<div x-data="{ count: {{ default }} }">
+    <button x-on:click="count++">+1</button>
+    <button x-on:click="count = {{ default }}">reset</button>
+    <button x-on:click="count--">-1</button>
+    <p x-text="count"></p>
+</div>

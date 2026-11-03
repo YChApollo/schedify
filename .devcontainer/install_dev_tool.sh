@@ -6,4 +6,6 @@ set -e
 # pip install djlint
 
 uv tool install ruff@latest
+uv tool install just-lsp
+uv tool install rust-just
 uv sync

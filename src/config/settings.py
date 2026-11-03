@@ -13,13 +13,11 @@ SECRET_KEY = "django-insecure-pxv!#0g720la04^qgpo6s)&v%9^k$p#r6e%r#diob2%tthr!#7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "schedify.ychapollo.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "schedify-develop.ychapollo.com"]
 
 # Application definition
 
-LOCAL_APPS = [
-    "apps.schedify",
-]
+LOCAL_APPS = ["apps.schedify", "apps.courses", "apps.todos"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -43,6 +41,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 
+LOCAL_CONTEXT_PROCESSER = [
+    "apps.context_processors.navigation",
+    "apps.context_processors.call_to_action",
+]
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -53,6 +56,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                *LOCAL_CONTEXT_PROCESSER,
             ],
         },
     },

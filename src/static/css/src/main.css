@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@source "../../../../../**/*.html";
+
+/* Playwrite TZ Guides */
+@font-face {
+    font-family: "Playwrite TZ Guides";
+    src: url("../../fonts/Playwrite_TZ_Guides/PlaywriteTZGuides-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Maven Pro */
+@font-face {
+    font-family: "Maven Pro";
+    src: url("../../fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* register fonts */
+@theme {
+    --font-playwrite: "Playwrite TZ Guides", cursive, sans-serif;
+    --font-maven: "Maven Pro", sans-serif;
+}

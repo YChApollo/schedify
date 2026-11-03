@@ -2,13 +2,29 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
 
-def index(request: HttpRequest) -> HttpResponse:
+def index_view(request: HttpRequest) -> HttpResponse:
     return render(request, "schedify/index.html")
 
 
-def login(request: HttpRequest) -> HttpResponse:
+def register_view(request: HttpRequest) -> HttpResponse:
+    return render(request, "schedify/register.html")
+
+
+def login_view(request: HttpRequest) -> HttpResponse:
     return render(request, "schedify/login.html")
 
 
-def registry(request: HttpRequest) -> HttpResponse:
-    return render(request, "schedify/registry.html")
+def logout_view(request: HttpRequest) -> HttpResponse:
+    return render(request, "schedify/logout.html")
+
+
+def about_view(request: HttpRequest) -> HttpResponse:
+    return render(request, "schedify/about.html")
+
+
+def demo_view(request: HttpRequest) -> HttpResponse:
+    return render(request, "schedify/demo.html")
+
+
+def contribute_view(request: HttpRequest) -> HttpResponse:
+    return render(request, "schedify/contribute.html")

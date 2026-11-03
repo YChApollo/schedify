@@ -1,1 +1,19 @@
 <!-- templates/components/navbar.html -->
+<header class="sticky top-0 bg-gray-100 border-b border-gray-500">
+    <nav class="flex flex-row justify-between items-center h-18 px-4">
+        <div class="flex-none text-4xl font-bold px-8">
+            <img src="" alt="">
+            <a href="{% url 'schedify:index' %}">Schedify</a>
+        </div>
+
+        <ul class="flex flex-row justify-center items-center gap-6">
+            {% for item in navbar_items %}
+            <li class="flex items-center text-lg hover:text-emerald-800">
+                <a href="{{ item.url }}">{{ item.label }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="justify-end items-center"><a href="{% url 'schedify:login' %}">Login</a></div>
+    </nav>
+</header>

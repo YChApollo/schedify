@@ -2,9 +2,6 @@
   "terminal.integrated.env.linux": {
     "PYTHONPATH": "${workspaceFolder}/src"
   },
-  // "files.associations": {
-  //   "**/templates/**/*.html": "django-html"
-  // },
   "[python]": {
     "editor.quickSuggestions": {
       "other": "on",
@@ -12,6 +9,9 @@
       "strings": "off"
     }
   },
+  // "files.associations": {
+  //   "**/templates/**/*.html": "django-html"
+  // },
   // "[django-html]": {
   //   "editor.quickSuggestions": {
   //     "other": "on",

@@ -3,10 +3,100 @@
 {% load static %}
 
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/pages/schedify/index.css' %}">
-{% endblock css %}
-
-
 {% block content %}
+<div class="flex flex-col gap-24">
+    <h2 class="text-6xl font-playwrite font-normal">
+        <span id="slogan"></span><span id="slogan_cursor">|</span>
+    </h2>
+    <h2 class="text-4xl">
+        <span id="subtitle"></span><span id="subtitle_cursor">|</span>
+    </h2>
+
+    <div class="cta_container flex flex-row justify-between gap-6">
+        {% for button in cta_buttons %}
+        <div class="cta_btn border rounded-2xl border-gray-500 text-xl px-4 transition-colors">
+            <a href="{{ button.url }}">{{ button.label }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}
+
+
+{% block extra_js %}
+<script>
+    const slogan = "Time is money!";
+    const subtitle = "It's time to move on...";
+    // const greet = "Welcome to Schedify!";
+    // const words = ["Course Management", "Todo List", "Academic Credit"]
+
+    const tl = gsap.timeline();
+
+    // gsap.to("#slogan_cursor", {
+    //     opacity: 0,
+    //     repeat: -1,
+    //     yoyo: true,
+    //     duration: 0.5,
+    //     ease: "steps(1)"
+    // });
+
+    // tl.to("#slogan", {
+    //     text: slogan,
+    //     duration: slogan.length * 0.08,
+    //     ease: "none",
+    // });
+
+    // gsap.to("#subtitle_cursor", {
+    //     opacity: 0,
+    //     repeat: -1,
+    //     yoyo: true,
+    //     duration: 0.5,
+    //     ease: "steps(1)"
+    // });
+
+    // tl.to("#subtitle", {
+    //     text: subtitle,
+    //     duration: subtitle.length * 0.08,
+    //     ease: "none",
+    // });
+
+    gsap.set("#subtitle_cursor", { autoAlpha: 0 });
+
+    const sloganCursorTween = gsap.to("#slogan_cursor", {
+        opacity: 0,
+        repeat: -1,
+        yoyo: true,
+        duration: 0.5,
+        ease: "steps(1)"
+    });
+
+    // 2. 打 slogan 的字
+    tl.to("#slogan", {
+        text: slogan,
+        duration: slogan.length * 0.08,
+        ease: "none",
+    })
+        // 3. slogan 打字完成後：停掉 slogan 游標、隱藏它，並顯示/啟動 subtitle 游標
+        .call(() => {
+            sloganCursorTween.kill(); // 停止 slogan 游標閃爍
+            gsap.set("#slogan_cursor", { autoAlpha: 0 }); // 隱藏 slogan 游標
+            gsap.set("#subtitle_cursor", { autoAlpha: 1 }); // 顯示 subtitle 游標
+
+            // 啟動 subtitle 游標閃爍
+            gsap.to("#subtitle_cursor", {
+                opacity: 0,
+                repeat: -1,
+                yoyo: true,
+                duration: 0.5,
+                ease: "steps(1)"
+            });
+        })
+        // 4. 開始打 subtitle 的字
+        .to("#subtitle", {
+            text: subtitle,
+            duration: subtitle.length * 0.08,
+            ease: "none",
+        })
+    // .to(".cta_container", {});
+</script>
+{% endblock extra_js %}

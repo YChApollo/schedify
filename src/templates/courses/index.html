@@ -1,0 +1,46 @@
+<!-- templates/courses/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}Courses | Schedify{% endblock title %}
+
+
+
+{% block content %}
+<div class="overflow-x-auto rounded-2xl bg-white p-4 shadow">
+    <table class="w-full min-w- table-fixed border-separate border-spacing-1">
+        <thead>
+            <tr>
+                <th class="w-28 p-3"></th>
+                {% for day in days %}
+                <th class="p-3 font-medium">{{ day }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for slot in schedule %}
+            {% if slot.is_lunch %}
+            <tr>
+                <th class="p-3 text-sm font-normal">{{ slot.time }}</th>
+                <td colspan="5" class="h-7 bg-slate-300"></td>
+            </tr>
+            {% else %}
+            <tr>
+                <th class="border-r p-2 text-left text-sm font-normal">
+                    {{ slot.time }}
+                </th>
+                {% for course in slot.courses %}
+                <td class="h-12 border-y-2 border-slate-200 p-2 text-center">
+                    {{ course }}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

@@ -1,12 +1,76 @@
 <!-- templates/schedify/login.html -->
 {% extends 'base.html' %}
-{% load static %}
 
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/pages/login.css' %}">
-{% endblock extra_css %}
-
+{% block title %}Login | Schedify{% endblock title %}
 
 {% block content %}
+<main class="flex min-h-screen items-center justify-center bg-[#F1F1F1] px-4 py-12">
+    <div class="w-full max-w-[480px] rounded-[24px] bg-white px-7 py-10 shadow-[0_12px_35px_rgba(0,0,0,0.08)] sm:px-10">
+        <header class="mb-12 text-center">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Schedify</h1>
+            <p class="mt-1 text-sm tracking-widest text-gray-500">課表選課系統</p>
+        </header>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">歡迎回來！</h2>
+            <p class="mt-2 text-sm text-gray-400">登入帳號以管理你的課程與每週課表</p>
+        </div>
+
+        <!-- 純靜態介面：不會提交登入資料 -->
+        <form class="space-y-6" onsubmit="return false;">
+            <div>
+                <label for="student-id" class="mb-2 block text-sm font-semibold text-gray-800">學生帳號</label>
+                <input type="text" id="student-id" name="student_id" placeholder="請輸入學生帳號" autocomplete="username"
+                    required
+                    class="w-full rounded-xl border border-gray-200 bg-[#FAFAFC] px-4 py-3.5 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-[#508783] focus:ring-2 focus:ring-[#508783]/15">
+            </div>
+
+            <div>
+                <label for="login-password" class="mb-2 block text-sm font-semibold text-gray-800">密碼</label>
+                <div class="relative">
+                    <input type="password" id="login-password" name="password" placeholder="請輸入密碼"
+                        autocomplete="current-password" required
+                        class="w-full rounded-xl border border-gray-200 bg-[#FAFAFC] px-4 py-3.5 pr-12 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-[#508783] focus:ring-2 focus:ring-[#508783]/15">
+                    <button type="button" id="toggle-password" aria-label="顯示密碼" aria-pressed="false"
+                        class="absolute inset-y-0 right-4 flex items-center text-gray-400 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3">
+                <label class="flex cursor-pointer items-center gap-2 text-sm text-gray-400">
+                    <input type="checkbox" name="remember" class="size-4 rounded border-gray-300 accent-[#508783]">記住帳號
+                </label>
+                <a href="#" onclick="return false;" class="text-sm font-medium text-[#7763A3] hover:underline">忘記密碼？</a>
+            </div>
+
+            <button type="button"
+                class="w-full cursor-pointer rounded-xl bg-[#508783] px-4 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-[#416F6B] active:scale-[0.99]">登入</button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-500">還沒有帳號？ <a href="{% url 'schedify:register' %}"
+                    class="font-semibold text-[#508783] hover:underline">立即註冊</a></p>
+        </div>
+        <p class="mt-8 text-center text-xs text-gray-300">© 2026 Schedify · Your Schedule, Your Way.</p>
+    </div>
+</main>
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+    document.getElementById('toggle-password').addEventListener('click', function () {
+        const input = document.getElementById('login-password');
+        const show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        this.setAttribute('aria-label', show ? '隱藏密碼' : '顯示密碼');
+        this.setAttribute('aria-pressed', String(show));
+    });
+</script>
+{% endblock extra_js %}

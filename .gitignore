@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+.devcontainer/setup_cloudflare_tunnel.sh
+docs/

@@ -1,0 +1,6 @@
+<!-- templates/components/select.html -->
+<select name="{{ select_name }}" id="{{ select_id }}">
+    {% for item in items %}
+    <option value="{{ item.value}}">{{ item.label }}</option>
+    {% endfor %}
+</select>

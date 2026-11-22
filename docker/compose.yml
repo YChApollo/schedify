@@ -1,0 +1,12 @@
+services:
+  devcontainer:
+    container_name: schedify_devcontainer
+    hostname: schedify-devcontainer
+    volumes:
+      - ../:/workspace
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+      target: devcontainer
+    stdin_open: true
+    tty: true

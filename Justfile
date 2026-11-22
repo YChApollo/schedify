@@ -1,3 +1,6 @@
+[windows]
+set shell := ["powershell.exe", "-NoLogo", "-NoProfile", "-Command"]
+
 default:
     just --list
 
@@ -5,25 +8,25 @@ runserver port="8000":
     uv run python src/manage.py runserver {{ port }}
 
 startapp appname:
-    mkdir -p src/apps/{{ appname }}
+    uv run python -c "import pathlib; pathlib.Path('src/apps/{{ appname }}').mkdir(parents=True, exist_ok=True)"
     uv run django-admin startapp {{ appname }} src/apps/{{ appname }}
 
-format:
-    ruff format
-
-check:
-    ruff check
-
-fix:
-    ruff check --fix
-
-ff:
-    ruff check --fix
-    ruff format
+format-and-fix:
+    uv run ruff check --fix
+    uv run ruff format
 
 debug-css:
-    ./tailwindcss -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --content ./src/**/*.html --watch
+    tailwindcss -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --watch
 
 build-css:
-    chmod +x ./tailwindcss
-    ./tailwindcss -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --minify
+    tailwindcss -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --minify
+
+[linux]
+setup-cloudflare-tunnel:
+    bash ./.devcontainer/.setup_cloudflare_tunnel.sh
+
+build-devcontainer-image:
+    docker build -f ./docker/Dockerfile -t docker.io/ychapollo/schedify-devcontainer:latest .
+
+push-devcontainer-image:
+    docker push docker.io/ychapollo/schedify-devcontainer:latest

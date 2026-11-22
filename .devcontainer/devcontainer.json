@@ -1,34 +1,36 @@
 {
-  "name": "Schedify",
-  "runArgs": [
-    "--name",
-    "schedify-devcontainer"
-  ],
-  "image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
-  "onCreateCommand": "bash .devcontainer/install_uv.sh && bash .devcontainer/install_cloudflared.sh",
-  "postStartCommand": "bash .devcontainer/setup_cloudflare_tunnel.sh && bash .devcontainer/install_dev_tool.sh",
-  "forwardPorts": [
-    8000
-  ],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vsliveshare.vsliveshare",
-        "kermanx.p2p-live-share",
-        "ms-python.python",
-        "ms-python.debugpy",
-        "ms-python.vscode-pylance",
-        "ms-python.vscode-python-envs",
-        "charliermarsh.ruff",
-        "ms-vscode.live-server",
-        "formulahendry.auto-complete-tag",
-        "thebarkman.vscode-djaneiro",
-        "bradlc.vscode-tailwindcss",
-        "nefrob.vscode-just-syntax"
-        // "fourdigits.djlsp",
-        // "monosans.djlint",
-        // "batisteo.vscode-django",
-      ]
+    "name": "Schedify",
+    "runArgs": [
+        "--name",
+        "schedify-devcontainer"
+    ],
+    "dockerComposeFile": "../docker/compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "schedifier",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils": {
+            "upgradePackages": "true",
+            "username": "schedifier",
+            "sudoers": "true"
+        }
+    },
+    "updateContentCommand": "bash ./docker/scripts/install_dev_util.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.debugpy",
+                "ms-python.vscode-pylance",
+                "ms-python.vscode-python-envs",
+                "charliermarsh.ruff",
+                "ms-vscode.live-server",
+                "formulahendry.auto-complete-tag",
+                "thebarkman.vscode-djaneiro",
+                "bradlc.vscode-tailwindcss",
+                "nefrob.vscode-just-syntax",
+                "mads-hartmann.bash-ide-vscode"
+            ]
+        }
     }
-  }
 }

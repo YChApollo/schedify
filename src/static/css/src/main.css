@@ -1,6 +1,8 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 
-@source "../../../../../**/*.html";
+@source "../../../apps";
+@source "../../../templates";
+@source "../../../static";
 
 /* Playwrite TZ Guides */
 @font-face {

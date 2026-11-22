@@ -16,14 +16,14 @@ format-and-fix:
     uv run ruff format
 
 debug-css:
-    tailwindcss -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --watch
+    tailwind -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --watch
 
 build-css:
-    tailwindcss -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --minify
+    tailwind -i ./src/static/css/src/main.css -o ./src/static/css/dist/tailwind.styles.css --minify
 
 [linux]
 setup-cloudflare-tunnel:
-    bash ./.devcontainer/.setup_cloudflare_tunnel.sh
+    bash ./.devcontainer/scripts/.setup_cloudflare_tunnel.sh
 
 build-devcontainer-image:
     docker build -f ./docker/Dockerfile -t docker.io/ychapollo/schedify-devcontainer:latest .

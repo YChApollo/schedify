@@ -219,5 +219,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-.devcontainer/.*.sh
-docs/
+src/css/dist/
+.devcontainer/**/.*.sh

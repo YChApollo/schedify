@@ -15,21 +15,31 @@
             "sudoers": "true"
         }
     },
-    "updateContentCommand": "bash ./docker/scripts/install_dev_util.sh",
     "customizations": {
         "vscode": {
             "extensions": [
+                "thebarkman.vscode-djaneiro",
+                "ms-vscode-remote.vscode-remote-extensionpack",
+                "vscode-icons-team.vscode-icons",
+                "formulahendry.auto-complete-tag",
+                "mads-hartmann.bash-ide-vscode",
+                "eugenejeon.codesnap-plus-fix",
+                "ms-azuretools.vscode-containers",
+                "cweijan.vscode-database-client2",
+                "dbdiagram.dbdiagram-vscode",
+                "fill-labs.dependi",
+                "docker.docker",
+                "ms-vscode.live-server",
+                "ms-vsliveshare.vsliveshare",
+                "kermanx.p2p-live-share",
+                "ms-python.vscode-pylance",
                 "ms-python.python",
                 "ms-python.debugpy",
-                "ms-python.vscode-pylance",
                 "ms-python.vscode-python-envs",
                 "charliermarsh.ruff",
-                "ms-vscode.live-server",
-                "formulahendry.auto-complete-tag",
-                "thebarkman.vscode-djaneiro",
                 "bradlc.vscode-tailwindcss",
                 "nefrob.vscode-just-syntax",
-                "mads-hartmann.bash-ide-vscode"
+                "redhat.vscode-yaml"
             ]
         }
     }

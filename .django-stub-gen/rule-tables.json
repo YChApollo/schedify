@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "fingerprint": "version=6.1.2|django/db/models/base.py:99654:1795336744851|django/db/models/fields/__init__.py:103144:1795336744855|django/db/models/lookups.py:28845:1795336744851|django/db/models/fields/related_descriptors.py:69853:1795336744855|django/db/models/fields/related.py:85818:1795336744855|django/db/models/query.py:120227:1795336744855|django/db/models/sql/query.py:123915:1795336744855",
+  "fingerprint": "version=6.1.2|django/db/models/base.py:99654:1795365999640|django/db/models/fields/__init__.py:103144:1795365999644|django/db/models/lookups.py:28845:1795365999644|django/db/models/fields/related_descriptors.py:69853:1795365999644|django/db/models/fields/related.py:85818:1795365999644|django/db/models/query.py:120227:1795365999644|django/db/models/sql/query.py:123915:1795365999644",
   "tables": {
     "django_version": "6.1.2",
     "site_packages_path": "/workspace/.venv/lib/python3.14/site-packages",
-    "generated_at_unix_ms": 1795336745754,
+    "generated_at_unix_ms": 1795399023887,
     "core_lookups": [
       "exact",
       "iexact",

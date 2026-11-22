@@ -2,27 +2,4 @@
   "terminal.integrated.env.linux": {
     "PYTHONPATH": "${workspaceFolder}/src"
   },
-  "[python]": {
-    "editor.quickSuggestions": {
-      "other": "on",
-      "comments": "off",
-      "strings": "off"
-    }
-  },
-  // "files.associations": {
-  //   "**/templates/**/*.html": "django-html"
-  // },
-  // "[django-html]": {
-  //   "editor.quickSuggestions": {
-  //     "other": "on",
-  //     "comments": "off",
-  //     "strings": "off"
-  //   },
-  //   "editor.formatOnSave": true
-  // },
-  // "djangoTemplateLsp.djangoSettingsModule": "config.settings",
-  // "djangoTemplateLsp.djlspPath": "${workspaceFolder}/.venv/bin/djlsp",
-  // extension bug - fallback to global python
-  // "djlint.pythonPath": "${workspaceFolder}/.venv/bin/python",
-  // "djlint.executablePath": "${workspaceFolder}/.venv/bin/djlint"
 }

@@ -12,19 +12,19 @@
 
     3. 於控制台的搜索`環境`，並點擊`編輯系統環境變數`，打開`系統內容`視窗
 
-        ![](./docs/control-panel.png)
+        ![](/docs/img/control-panel.png)
 
     4. 點擊`環境變數`，打開`環境變數`視窗
 
-        ![](./docs/img/system-content.png)
+        ![](/docs/img/system-content.png)
 
     5. 雙擊`<你的使用者名稱>的使用者變數`裡面的`Path`變數，打開`編輯環境變數視窗`
 
-        ![](./docs/img/environment-variable.png)
+        ![](/docs/img/environment-variable.png)
 
     6. 點擊`新增`並輸入`C:\使用者\<你的使用者名稱>\.local\opt\just-1.59.0-x86_64-pc-windows-msvc`
 
-        ![](./docs/img/edit-environment-variable.png)
+        ![](/docs/img/edit-environment-variable.png)
 
     7. 一路確定回`系統內容`視窗
 
@@ -32,11 +32,11 @@
 
     1. 右鍵工作列上的`Windows`圖標，並選擇`終端機 (系統管理員)`
 
-        ![](./docs/img/windows-button-popup.png)
+        ![](/docs/img/windows-button-popup.png)
 
     2. `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex`
 
-        ![](./docs/img/powershell-execution-result.png)
+        ![](/docs/img/powershell-execution-result.png)
 
 3. `TailwindCSS`
 

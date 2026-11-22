@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM docker.io/buildpack-deps:trixie-scm AS dependency
 
 WORKDIR /var/tmp
